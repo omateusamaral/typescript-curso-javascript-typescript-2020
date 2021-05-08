@@ -29,5 +29,5 @@ const squareofTwoString = squareof('2');
 if (typeof squareofTwoString === null) {
   console.log('Conta inválida');
 } else {
-  console.log(squareofTwoString * 100);
+  // console.log(squareofTwoString * 100);
 }
