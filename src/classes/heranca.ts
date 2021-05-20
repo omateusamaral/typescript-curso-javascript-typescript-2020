@@ -18,8 +18,21 @@ export class Pessoa {
   }
 }
 export class Aluno extends Pessoa {
+  sala: string;
+  constructor(
+    nome: string,
+    sobrenome: string,
+    idade: number,
+    cpf: string,
+    sala: string,
+  ) {
+    super(nome, sobrenome, idade, cpf); //constructor de pessoa
+    this.sala = sala;
+  }
   getNomeCompleto(): string {
-    return `Isso vem do aluno ${this.nome} ${this.sobrenome}`;
+    console.log('Antes');
+    const result = super.getNomeCompleto();
+    return result + ' HEYYY';
   }
 }
 
@@ -30,9 +43,10 @@ export class Cliente extends Pessoa {
 }
 
 const pessoa = new Pessoa('Mateus', 'Amaral', 19, '000.000.000-00');
-const aluno = new Aluno('Mateus', 'Amaral', 19, '000.000.000-00');
+const aluno = new Aluno('Mateus', 'Amaral', 19, '000.000.000-00', '0001');
 const cliente = new Cliente('Mateus', 'Amaral', 19, '000.000.000-00');
 
 console.log(pessoa);
 console.log(aluno.getIdade());
 console.log(cliente);
+console.log(aluno);
